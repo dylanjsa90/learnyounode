@@ -1,4 +1,6 @@
 const fs = require('fs');
-var file = fs.readFileSync(process.argv[2]);
-var fileContent = file.toString();
-console.log(fileContent.split('\n').length - 1);
+
+fs.readFile(process.argv[2], function(err, data){
+  var string = data.toString();
+  console.log(string.split('\n').length - 1);
+});
